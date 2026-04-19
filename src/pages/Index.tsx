@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const WEDDING_DATE = new Date("2026-07-04T17:00:00");
@@ -31,6 +31,131 @@ function useCountdown(target: Date) {
     return () => clearInterval(id);
   }, []);
   return time;
+}
+
+function RSVPForm() {
+  const [form, setForm] = useState({ name: "", attending: "yes", guests: "1", dietary: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="text-center py-12" style={{ border: "1px solid #111", padding: "48px 32px" }}>
+        <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.5rem, 4vw, 2rem)", fontWeight: 300 }} className="italic mb-4">
+          Спасибо, {form.name}!
+        </div>
+        <p style={{ fontSize: 14, color: "#888" }}>Мы получили ваш ответ и с нетерпением ждём встречи.</p>
+      </div>
+    );
+  }
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    border: "1px solid #ddd",
+    padding: "12px 16px",
+    background: "transparent",
+    fontFamily: "'Montserrat', sans-serif",
+    fontSize: 14,
+    color: "#111",
+    outline: "none",
+    transition: "border-color 0.2s",
+    boxSizing: "border-box",
+  };
+
+  return (
+    <form ref={formRef} onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <div>
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Ваше имя *</label>
+        <input
+          required
+          style={inputStyle}
+          placeholder="Имя и фамилия"
+          value={form.name}
+          onChange={e => setForm({ ...form, name: e.target.value })}
+          onFocus={e => (e.target.style.borderColor = "#111")}
+          onBlur={e => (e.target.style.borderColor = "#ddd")}
+        />
+      </div>
+
+      <div>
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Присутствие *</label>
+        <div style={{ display: "flex", gap: 12 }}>
+          {[{ val: "yes", label: "Приду" }, { val: "no", label: "Не смогу" }].map(opt => (
+            <label key={opt.val} style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", flex: 1, border: `1px solid ${form.attending === opt.val ? "#111" : "#ddd"}`, padding: "12px 16px", fontSize: 14, transition: "border-color 0.2s" }}>
+              <input type="radio" name="attending" value={opt.val} checked={form.attending === opt.val} onChange={e => setForm({ ...form, attending: e.target.value })} style={{ accentColor: "#111" }} />
+              {opt.label}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {form.attending === "yes" && (
+        <div>
+          <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Количество гостей</label>
+          <select
+            style={{ ...inputStyle, cursor: "pointer" }}
+            value={form.guests}
+            onChange={e => setForm({ ...form, guests: e.target.value })}
+            onFocus={e => (e.target.style.borderColor = "#111")}
+            onBlur={e => (e.target.style.borderColor = "#ddd")}
+          >
+            {["1", "2", "3", "4"].map(n => <option key={n} value={n}>{n}</option>)}
+          </select>
+        </div>
+      )}
+
+      <div>
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Пожелания к меню</label>
+        <input
+          style={inputStyle}
+          placeholder="Аллергии, предпочтения..."
+          value={form.dietary}
+          onChange={e => setForm({ ...form, dietary: e.target.value })}
+          onFocus={e => (e.target.style.borderColor = "#111")}
+          onBlur={e => (e.target.style.borderColor = "#ddd")}
+        />
+      </div>
+
+      <div>
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Пожелания молодожёнам</label>
+        <textarea
+          rows={4}
+          style={{ ...inputStyle, resize: "vertical" }}
+          placeholder="Ваши тёплые слова..."
+          value={form.message}
+          onChange={e => setForm({ ...form, message: e.target.value })}
+          onFocus={e => (e.target.style.borderColor = "#111")}
+          onBlur={e => (e.target.style.borderColor = "#ddd")}
+        />
+      </div>
+
+      <button
+        type="submit"
+        style={{
+          background: "#111",
+          color: "#fff",
+          border: "none",
+          padding: "16px 40px",
+          fontFamily: "'Montserrat', sans-serif",
+          fontSize: 11,
+          letterSpacing: "0.3em",
+          textTransform: "uppercase",
+          cursor: "pointer",
+          transition: "background 0.2s",
+          marginTop: 8,
+        }}
+        onMouseEnter={e => ((e.target as HTMLButtonElement).style.background = "#333")}
+        onMouseLeave={e => ((e.target as HTMLButtonElement).style.background = "#111")}
+      >
+        Подтвердить присутствие
+      </button>
+    </form>
+  );
 }
 
 export default function Index() {
@@ -369,6 +494,21 @@ export default function Index() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* RSVP */}
+      <section className="py-24 px-6 classic-bg" style={{ borderBottom: "1px solid #ddd" }}>
+        <div className="max-w-xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="section-label">Анкета гостя</p>
+            <h2 className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 300 }}>
+              Подтверждение присутствия
+            </h2>
+            <p style={{ fontSize: 13, color: "#888", marginTop: 12 }}>Пожалуйста, заполните форму до 20 июня 2026</p>
+          </div>
+
+          <RSVPForm />
         </div>
       </section>
 
