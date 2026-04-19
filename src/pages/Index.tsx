@@ -206,12 +206,7 @@ export default function Index() {
           </div>
         </div>
 
-        <div style={{ position: "absolute", bottom: 36, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-          <a href="#countdown" className="scroll-hint">
-            <span>Листайте</span>
-            <Icon name="ChevronDown" size={14} />
-          </a>
-        </div>
+
       </section>
 
       {/* Countdown */}
