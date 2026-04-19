@@ -370,6 +370,54 @@ export default function Index() {
 
       </section>
 
+      {/* Calendar */}
+      <section className="py-24 px-6 text-center" style={{ borderBottom: "1px solid #e0dbd4", background: "rgba(253,249,244,0.88)" }}>
+        <div className="max-w-sm mx-auto">
+          <p className="section-label mb-2">Дата торжества</p>
+          <h2 className="italic mb-10" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem, 4vw, 2.4rem)", fontWeight: 300 }}>
+            Июль 2026
+          </h2>
+          <div style={{ border: "1px solid #e0dbd4", background: "#fff", padding: "24px" }}>
+            {/* Weekday headers */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", marginBottom: 8 }}>
+              {["Пн","Вт","Ср","Чт","Пт","Сб","Вс"].map(d => (
+                <div key={d} style={{ fontSize: 10, letterSpacing: "0.15em", color: "#aaa", textAlign: "center", paddingBottom: 8 }}>{d}</div>
+              ))}
+            </div>
+            {/* Days grid — July 2026 starts on Wednesday (offset 2) */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "2px" }}>
+              {Array.from({ length: 37 }).map((_, i) => {
+                const day = i - 2; // offset: Wed = index 2
+                if (day <= 0 || day > 31) return <div key={i} />;
+                const isWedding = day === 4;
+                const isWeekend = (i % 7 === 5) || (i % 7 === 6);
+                return (
+                  <div key={i} style={{
+                    textAlign: "center",
+                    padding: "6px 0",
+                    fontSize: 14,
+                    fontWeight: isWedding ? 600 : 400,
+                    color: isWedding ? "#fff" : isWeekend ? "#999" : "#111",
+                    background: isWedding ? "#111" : "transparent",
+                    borderRadius: isWedding ? "50%" : 0,
+                    aspectRatio: "1",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontFamily: isWedding ? "'Cormorant Garamond', serif" : "inherit",
+                  }}>
+                    {day}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <p style={{ fontSize: 12, color: "#888", marginTop: 16, letterSpacing: "0.1em" }}>
+            4 июля 2026 · суббота
+          </p>
+        </div>
+      </section>
+
       {/* Countdown */}
 
       <section id="countdown" className="py-24 px-6 text-center" style={{ borderBottom: "1px solid #e0dbd4", background: "rgba(253,249,244,0.88)" }}>
