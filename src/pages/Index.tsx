@@ -5,11 +5,10 @@ const WEDDING_DATE = new Date("2026-07-04T17:00:00");
 const COUPLE_PHOTO = "https://cdn.poehali.dev/files/286c8940-d027-4fd3-8434-8a7364a85ee7.jpg";
 
 const PROGRAM = [
-  { time: "12:00", title: "Сбор гостей", desc: "Выкуп невесты, приветственный фуршет" },
-  { time: "13:30", title: "Церемония бракосочетания", desc: "Обмен клятвами и кольцами" },
-  { time: "14:00", title: "Свадебная фотосессия", desc: "Памятные снимки с молодожёнами" },
-  { time: "17:00", title: "Свадебный банкет", desc: "Праздничный ужин" },
-  { time: "21:30", title: "Разрезание свадебного торта", desc: "" },
+  { time: "12:00", title: "Выкуп невесты", desc: "п. Аккермановка, ул. Солнечная 7" },
+  { time: "13:30", title: "Церемония бракосочетания", desc: "г. Новотроицк, ул. Советская 51" },
+  { time: "14:00", title: "Свадебная фотосессия", desc: "" },
+  { time: "17:00", title: "Свадебный банкет", desc: "Арт-кафе «Чехов», г. Новотроицк, ул. Свистунова 7" },
   { time: "22:00", title: "Торжественное завершение", desc: "" },
 ];
 
@@ -130,18 +129,6 @@ function RSVPForm() {
           </select>
         </div>
       )}
-
-      <div>
-        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Пожелания к меню</label>
-        <input
-          style={inputStyle}
-          placeholder="Аллергии, предпочтения..."
-          value={form.dietary}
-          onChange={e => setForm({ ...form, dietary: e.target.value })}
-          onFocus={e => (e.target.style.borderColor = "#111")}
-          onBlur={e => (e.target.style.borderColor = "#ddd")}
-        />
-      </div>
 
       <div>
         <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Пожелания молодожёнам</label>
@@ -528,7 +515,7 @@ export default function Index() {
           <div className="text-center mb-16">
             <p className="section-label">Анкета гостя</p>
             <h2 className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 300 }}>
-              Подтверждение присутствия
+              Анкета гостя
             </h2>
             <p style={{ fontSize: 13, color: "#888", marginTop: 12 }}>Пожалуйста, заполните форму до 20 июня 2026</p>
           </div>
