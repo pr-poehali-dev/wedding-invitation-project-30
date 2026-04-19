@@ -384,27 +384,27 @@ export default function Index() {
                 <div key={d} style={{ fontSize: 10, letterSpacing: "0.15em", color: "#aaa", textAlign: "center", paddingBottom: 8 }}>{d}</div>
               ))}
             </div>
-            {/* Days grid — July 2026 starts on Wednesday (offset 2) */}
+            {/* Days grid — July 2026: 1 Jul = Wednesday, offset = 2 (Mon=0) */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "2px" }}>
-              {Array.from({ length: 37 }).map((_, i) => {
-                const day = i - 2; // offset: Wed = index 2
-                if (day <= 0 || day > 31) return <div key={i} />;
+              {Array.from({ length: 42 }).map((_, i) => {
+                const offset = 2; // Пн=0, Вт=1, Ср=2 → 1 июля = среда
+                const day = i - offset + 1;
+                if (day < 1 || day > 31) return <div key={i} />;
+                const colIndex = i % 7; // 0=Пн..5=Сб,6=Вс
                 const isWedding = day === 4;
-                const isWeekend = (i % 7 === 5) || (i % 7 === 6);
+                const isWeekend = colIndex === 5 || colIndex === 6;
                 return (
                   <div key={i} style={{
-                    textAlign: "center",
-                    padding: "6px 0",
-                    fontSize: 14,
-                    fontWeight: isWedding ? 600 : 400,
-                    color: isWedding ? "#fff" : isWeekend ? "#999" : "#111",
-                    background: isWedding ? "#111" : "transparent",
-                    borderRadius: isWedding ? "50%" : 0,
                     aspectRatio: "1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontFamily: isWedding ? "'Cormorant Garamond', serif" : "inherit",
+                    fontSize: 14,
+                    fontWeight: isWedding ? 600 : 400,
+                    color: isWedding ? "#111" : isWeekend ? "#999" : "#111",
+                    background: "transparent",
+                    border: isWedding ? "1.5px solid #111" : "none",
+                    borderRadius: "50%",
                   }}>
                     {day}
                   </div>
