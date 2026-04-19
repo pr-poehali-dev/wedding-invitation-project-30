@@ -37,8 +37,30 @@ export default function Index() {
   const countdown = useCountdown(WEDDING_DATE);
 
   return (
-    <div style={{ background: "#fff", fontFamily: "'Montserrat', sans-serif", color: "#111" }}>
+    <div style={{ background: "#f9f7f4", fontFamily: "'Montserrat', sans-serif", color: "#111" }}>
       <style>{`
+        body {
+          background-color: #f9f7f4;
+        }
+
+        .classic-bg {
+          background-color: #f9f7f4;
+          background-image:
+            linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+            linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.03) 75%),
+            linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.03) 75%);
+          background-size: 40px 40px;
+          background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+        }
+
+        .hero-bg {
+          background-color: #f9f7f4;
+          background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.04) 39px, rgba(0,0,0,0.04) 40px),
+            repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.04) 39px, rgba(0,0,0,0.04) 40px);
+        }
+
         @keyframes fade-up {
           from { opacity: 0; transform: translateY(24px); }
           to { opacity: 1; transform: translateY(0); }
@@ -155,8 +177,8 @@ export default function Index() {
 
       {/* Hero */}
       <section
-        className="relative flex flex-col items-center justify-center text-center px-6"
-        style={{ minHeight: "100vh", borderBottom: "1px solid #e5e5e5" }}
+        className="relative flex flex-col items-center justify-center text-center px-6 hero-bg"
+        style={{ minHeight: "100vh", borderBottom: "1px solid #ddd" }}
       >
         {/* Corner accents */}
         <div style={{ position: "absolute", top: 24, left: 24, width: 32, height: 32, borderTop: "1px solid #111", borderLeft: "1px solid #111" }} />
@@ -210,7 +232,8 @@ export default function Index() {
       </section>
 
       {/* Countdown */}
-      <section id="countdown" className="py-24 px-6 text-center" style={{ borderBottom: "1px solid #e5e5e5", background: "#fff" }}>
+
+      <section id="countdown" className="py-24 px-6 text-center classic-bg" style={{ borderBottom: "1px solid #ddd" }}>
         <p className="section-label">До начала торжества</p>
         <h2
           className="italic mb-16"
@@ -250,7 +273,7 @@ export default function Index() {
       </section>
 
       {/* Details */}
-      <section className="py-24 px-6" style={{ background: "#fafafa", borderBottom: "1px solid #e5e5e5" }}>
+      <section className="py-24 px-6" style={{ background: "#f9f7f4", borderBottom: "1px solid #ddd" }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label text-[#000000]">Детали торжества</p>
@@ -279,7 +302,7 @@ export default function Index() {
       </section>
 
       {/* Program */}
-      <section id="program" className="py-24 px-6" style={{ background: "#fff", borderBottom: "1px solid #e5e5e5" }}>
+      <section id="program" className="py-24 px-6 classic-bg" style={{ borderBottom: "1px solid #ddd" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Программа дня</p>
@@ -306,7 +329,7 @@ export default function Index() {
       </section>
 
       {/* Details notes */}
-      <section className="py-24 px-6" style={{ background: "#fafafa", borderBottom: "1px solid #e5e5e5" }}>
+      <section className="py-24 px-6" style={{ background: "#f9f7f4", borderBottom: "1px solid #ddd" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Важная информация</p>
