@@ -131,11 +131,11 @@ function RSVPForm() {
       )}
 
       <div>
-        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#111", display: "block", marginBottom: 8 }}>Пожелания молодожёнам</label>
-        <textarea
-          rows={4}
-          style={{ ...inputStyle, resize: "vertical" }}
-          placeholder="Ваши тёплые слова..."
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#111", display: "block", marginBottom: 8 }}>Контактный номер</label>
+        <input
+          type="tel"
+          style={inputStyle}
+          placeholder="+7 (___) ___-__-__"
           value={form.message}
           onChange={e => setForm({ ...form, message: e.target.value })}
           onFocus={e => (e.target.style.borderColor = "#111")}
