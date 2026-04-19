@@ -333,15 +333,13 @@ export default function Index() {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Важная информация</p>
-            <h2 className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 300 }}>
-              Детали
-            </h2>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
             {[
               "Нам хотелось бы сделать этот день добрым, уютным и семейным, поэтому просим Вас воздержаться от криков «Горько!»",
               "Не переживайте, мы не будем вызывать гостей говорить тосты. Во время нашей свадьбы будет действовать «Открытый микрофон».",
+              "Важно! Не забудьте положить в карман мелочь – она пригодится для весёлых испытаний и поможет молодым в семейной жизни.",
             ].map((text, i) => (
               <div
                 key={i}
@@ -350,7 +348,7 @@ export default function Index() {
                   gap: 24,
                   alignItems: "flex-start",
                   padding: "24px 0",
-                  borderBottom: i < 1 ? "1px solid #e5e5e5" : "none",
+                  borderBottom: i < 2 ? "1px solid #e5e5e5" : "none",
                 }}
               >
                 <div style={{
