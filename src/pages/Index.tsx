@@ -189,11 +189,11 @@ export default function Index() {
           </p>
 
           <div className="fade-up-2 font-display italic mb-2" style={{ fontSize: "clamp(1.2rem, 4vw, 1.6rem)", color: "var(--dusty-rose)", fontFamily: "'Cormorant Garamond', serif" }}>
-            Александр & Елизавета
+            Анна & Равиль
           </div>
 
           <div className="fade-up-3 font-display my-6" style={{ fontSize: "clamp(3rem, 10vw, 7rem)", lineHeight: 1, color: "var(--mauve)", letterSpacing: "-2px", fontFamily: "'Cormorant Garamond', serif" }}>
-            14.06.2025
+            10.07.2016
           </div>
 
           <div className="fade-up-4 gold-divider mb-8">
@@ -232,7 +232,7 @@ export default function Index() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: "Calendar", label: "Дата", value: "14 июня 2025", sub: "Суббота" },
+              { icon: "Calendar", label: "Дата", value: "10 июля 2016", sub: "Суббота" },
               { icon: "Clock", label: "Время начала", value: "14:00", sub: "Сбор гостей с 13:30" },
               { icon: "MapPin", label: "Место", value: "Усадьба «Берёзовая роща»", sub: "д. Николо-Урюпино, 5" },
             ].map((item) => (
@@ -388,10 +388,10 @@ export default function Index() {
       <footer className="py-12 text-center" style={{ background: "var(--cream)" }}>
         <div className="shimmer-el text-3xl mb-4">✦</div>
         <p className="italic text-2xl mb-2" style={{ color: "var(--dark)", fontFamily: "'Cormorant Garamond', serif" }}>
-          Александр & Елизавета
+          Анна & Равиль
         </p>
         <p className="text-xs tracking-widest" style={{ color: "var(--gold)", opacity: 0.7, fontFamily: "'Montserrat', sans-serif" }}>
-          14 · 06 · 2025
+          10 · 07 · 2016
         </p>
       </footer>
     </div>
