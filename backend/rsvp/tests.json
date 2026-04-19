@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "Сохранение анкеты гостя",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест Гость",
+        "attending": "yes",
+        "guests": 2,
+        "dietary": "",
+        "message": "Поздравляем!"
+      },
+      "expectedStatus": 200,
+      "expectedBody": { "success": true },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

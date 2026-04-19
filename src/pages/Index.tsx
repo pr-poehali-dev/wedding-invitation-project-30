@@ -33,14 +33,36 @@ function useCountdown(target: Date) {
   return time;
 }
 
+const RSVP_URL = "https://functions.poehali.dev/093c40fd-ee47-4a93-896f-12b9205eba16";
+
 function RSVPForm() {
   const [form, setForm] = useState({ name: "", attending: "yes", guests: "1", dietary: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(RSVP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, guests: parseInt(form.guests) }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.error || "Ошибка при отправке");
+      }
+    } catch {
+      setError("Не удалось отправить. Попробуйте ещё раз.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -134,10 +156,13 @@ function RSVPForm() {
         />
       </div>
 
+      {error && <p style={{ fontSize: 13, color: "#c00", textAlign: "center" }}>{error}</p>}
+
       <button
         type="submit"
+        disabled={loading}
         style={{
-          background: "#111",
+          background: loading ? "#888" : "#111",
           color: "#fff",
           border: "none",
           padding: "16px 40px",
@@ -145,14 +170,14 @@ function RSVPForm() {
           fontSize: 11,
           letterSpacing: "0.3em",
           textTransform: "uppercase",
-          cursor: "pointer",
+          cursor: loading ? "not-allowed" : "pointer",
           transition: "background 0.2s",
           marginTop: 8,
         }}
-        onMouseEnter={e => ((e.target as HTMLButtonElement).style.background = "#333")}
-        onMouseLeave={e => ((e.target as HTMLButtonElement).style.background = "#111")}
+        onMouseEnter={e => { if (!loading) (e.target as HTMLButtonElement).style.background = "#333"; }}
+        onMouseLeave={e => { if (!loading) (e.target as HTMLButtonElement).style.background = "#111"; }}
       >
-        Подтвердить присутствие
+        {loading ? "Отправка..." : "Подтвердить присутствие"}
       </button>
     </form>
   );
