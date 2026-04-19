@@ -258,7 +258,7 @@ export default function Index() {
       <section className="py-24 px-6" style={{ background: "#fafafa", borderBottom: "1px solid #e5e5e5" }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <p className="section-label">Детали торжества</p>
+            <p className="section-label text-[#000000]">Детали торжества</p>
             <h2 className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 300 }}>
               Церемония & Банкет
             </h2>
@@ -274,7 +274,7 @@ export default function Index() {
                 <div className="mb-4 flex justify-center">
                   <Icon name={item.icon} size={20} />
                 </div>
-                <p className="section-label mb-2">{item.label}</p>
+                <p className="section-label mb-2 text-[#000000] text-[0.63rem]">{item.label}</p>
                 <p className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem", fontWeight: 400 }}>{item.value}</p>
                 <p style={{ fontSize: 12, color: "#888", marginTop: 4 }}>{item.sub}</p>
               </div>
