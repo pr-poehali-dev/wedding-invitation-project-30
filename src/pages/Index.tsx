@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
-const WEDDING_DATE = new Date("2016-07-10T14:00:00");
+const WEDDING_DATE = new Date("2026-07-04T14:00:00");
 const COUPLE_PHOTO = "https://cdn.poehali.dev/files/286c8940-d027-4fd3-8434-8a7364a85ee7.jpg";
 
 const PROGRAM = [
@@ -175,7 +175,7 @@ export default function Index() {
           </div>
 
           <div className="fade-up-3 mono-divider my-8">
-            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#aaa" }}>10 · 07 · 2016</span>
+            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#aaa" }}>04 · 07 · 2026</span>
           </div>
 
           <div className="fade-up-4" style={{ margin: "0 auto 32px", maxWidth: 320 }}>
@@ -202,7 +202,7 @@ export default function Index() {
 
           <div className="fade-up-6 mt-10 flex items-center justify-center gap-2" style={{ color: "#888", fontSize: 13 }}>
             <Icon name="MapPin" size={14} />
-            <span style={{ letterSpacing: "0.05em" }}>Усадьба «Берёзовая роща», Подмосковье</span>
+            <span style={{ letterSpacing: "0.05em" }}>Арт-кафе «Чехов», г. Новотроицк</span>
           </div>
         </div>
 
@@ -266,9 +266,9 @@ export default function Index() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: "Calendar", label: "Дата", value: "10 июля 2016", sub: "Суббота" },
+              { icon: "Calendar", label: "Дата", value: "4 июля 2026", sub: "Суббота" },
               { icon: "Clock", label: "Время начала", value: "14:00", sub: "Сбор гостей с 13:30" },
-              { icon: "MapPin", label: "Место", value: "Усадьба «Берёзовая роща»", sub: "д. Николо-Урюпино, 5" },
+              { icon: "MapPin", label: "Место", value: "Арт-кафе «Чехов»", sub: "г. Новотроицк" },
             ].map((item) => (
               <div key={item.label} className="detail-card">
                 <div className="mb-4 flex justify-center">
@@ -319,7 +319,7 @@ export default function Index() {
           Анна & Равиль
         </div>
         <p style={{ fontSize: 11, letterSpacing: "0.4em", color: "#666", textTransform: "uppercase" }}>
-          10 · 07 · 2016
+          04 · 07 · 2026
         </p>
       </footer>
     </div>
