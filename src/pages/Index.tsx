@@ -177,12 +177,12 @@ export default function Index() {
     <div style={{ fontFamily: "'Montserrat', sans-serif", color: "#111" }}>
       <style>{`
         body {
-          background-color: #fff;
-          background-image: url('https://cdn.poehali.dev/projects/ab1002c7-9042-4a9f-bffe-64f867186fb8/bucket/59a5e441-b2d2-4ae6-a014-b294eae185b3.png');
-          background-size: auto 100vh;
+          background-color: #fdf9f4;
+          background-image: url('https://cdn.poehali.dev/projects/ab1002c7-9042-4a9f-bffe-64f867186fb8/files/1345856c-838a-4f99-8f0b-7b412cdd5a06.jpg');
+          background-size: cover;
           background-attachment: fixed;
-          background-position: center top;
-          background-repeat: repeat-y;
+          background-position: center;
+          background-repeat: no-repeat;
         }
 
         .classic-bg {
@@ -197,7 +197,7 @@ export default function Index() {
         }
 
         .hero-bg {
-          background-color: rgba(255,255,255,0.55);
+          background-color: rgba(253,249,244,0.72);
         }
 
         @keyframes fade-up {
@@ -372,7 +372,7 @@ export default function Index() {
 
       {/* Countdown */}
 
-      <section id="countdown" className="py-24 px-6 text-center" style={{ borderBottom: "1px solid #ddd", background: "rgba(255,255,255,0.8)" }}>
+      <section id="countdown" className="py-24 px-6 text-center" style={{ borderBottom: "1px solid #e0dbd4", background: "rgba(253,249,244,0.88)" }}>
         <p className="section-label">До начала торжества</p>
         <h2
           className="italic mb-16"
@@ -412,7 +412,7 @@ export default function Index() {
       </section>
 
       {/* Details */}
-      <section className="py-24 px-6" style={{ background: "rgba(255,255,255,0.8)", borderBottom: "1px solid #ddd" }}>
+      <section className="py-24 px-6" style={{ background: "rgba(253,249,244,0.88)", borderBottom: "1px solid #e0dbd4" }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label text-[#000000]">Детали торжества</p>
@@ -441,7 +441,7 @@ export default function Index() {
       </section>
 
       {/* Program */}
-      <section id="program" className="py-24 px-6" style={{ borderBottom: "1px solid #ddd", background: "rgba(255,255,255,0.8)" }}>
+      <section id="program" className="py-24 px-6" style={{ borderBottom: "1px solid #e0dbd4", background: "rgba(253,249,244,0.88)" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Программа дня</p>
@@ -468,7 +468,7 @@ export default function Index() {
       </section>
 
       {/* Details notes */}
-      <section className="py-24 px-6" style={{ background: "rgba(255,255,255,0.8)", borderBottom: "1px solid #ddd" }}>
+      <section className="py-24 px-6" style={{ background: "rgba(253,249,244,0.88)", borderBottom: "1px solid #e0dbd4" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Важная информация</p>
@@ -512,7 +512,7 @@ export default function Index() {
       </section>
 
       {/* RSVP */}
-      <section className="py-24 px-6" style={{ borderBottom: "1px solid #ddd", background: "rgba(255,255,255,0.8)" }}>
+      <section className="py-24 px-6" style={{ borderBottom: "1px solid #e0dbd4", background: "rgba(253,249,244,0.88)" }}>
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Анкета гостя</p>
