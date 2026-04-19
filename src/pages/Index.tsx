@@ -310,6 +310,52 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Details notes */}
+      <section className="py-24 px-6" style={{ background: "#fafafa", borderBottom: "1px solid #e5e5e5" }}>
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="section-label">Важная информация</p>
+            <h2 className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 300 }}>
+              Детали
+            </h2>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            {[
+              "Нам хотелось бы сделать этот день добрым, уютным и семейным, поэтому просим Вас воздержаться от криков «Горько!»",
+              "Не переживайте, мы не будем вызывать гостей говорить тосты. Во время нашей свадьбы будет действовать «Открытый микрофон».",
+            ].map((text, i) => (
+              <div
+                key={i}
+                style={{
+                  display: "flex",
+                  gap: 24,
+                  alignItems: "flex-start",
+                  padding: "24px 0",
+                  borderBottom: i < 1 ? "1px solid #e5e5e5" : "none",
+                }}
+              >
+                <div style={{
+                  flexShrink: 0,
+                  width: 28,
+                  height: 28,
+                  border: "1px solid #111",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 12,
+                  fontWeight: 500,
+                  marginTop: 2,
+                }}>
+                  {i + 1}
+                </div>
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#333" }}>{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-16 text-center" style={{ background: "#111" }}>
         <div
