@@ -178,10 +178,11 @@ export default function Index() {
       <style>{`
         body {
           background-color: #fff;
-          background-image: url('https://cdn.poehali.dev/projects/ab1002c7-9042-4a9f-bffe-64f867186fb8/bucket/2c62c9a3-a7ef-4d3c-8a10-d54760b99e65.jpg');
-          background-size: cover;
+          background-image: url('https://cdn.poehali.dev/projects/ab1002c7-9042-4a9f-bffe-64f867186fb8/bucket/59a5e441-b2d2-4ae6-a014-b294eae185b3.png');
+          background-size: auto 100vh;
           background-attachment: fixed;
-          background-position: center;
+          background-position: center top;
+          background-repeat: repeat-y;
         }
 
         .classic-bg {
