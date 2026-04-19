@@ -326,7 +326,7 @@ export default function Index() {
         <div style={{ position: "absolute", bottom: 24, right: 24, width: 32, height: 32, borderBottom: "1px solid #111", borderRight: "1px solid #111" }} />
 
         <div className="max-w-2xl mx-auto">
-          <p className="fade-up-1 section-label my-2 mx-[17px] px-0 py-1.5 text-xs font-semibold text-[#000000] text-center">Свадебное приглашение</p>
+          <p className="fade-up-1 section-label px-0 py-1.5 font-semibold text-center text-[#000000] text-sm mx-7 my-[11px]">Свадебное приглашение</p>
 
           <div
             className="fade-up-2 italic"
