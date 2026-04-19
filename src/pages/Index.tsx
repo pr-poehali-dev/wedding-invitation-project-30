@@ -174,16 +174,20 @@ export default function Index() {
   const countdown = useCountdown(WEDDING_DATE);
 
   return (
-    <div style={{ background: "#f9f7f4", fontFamily: "'Montserrat', sans-serif", color: "#111" }}>
+    <div style={{ fontFamily: "'Montserrat', sans-serif", color: "#111" }}>
       <style>{`
         body {
-          background-color: #f9f7f4;
+          background-color: #fff;
+          background-image: url('https://cdn.poehali.dev/projects/ab1002c7-9042-4a9f-bffe-64f867186fb8/bucket/2c62c9a3-a7ef-4d3c-8a10-d54760b99e65.jpg');
+          background-size: cover;
+          background-attachment: fixed;
+          background-position: center;
         }
 
         .classic-bg {
-          background-color: #f9f7f4;
+          background-color: rgba(255,255,255,0.75);
           background-image:
-            linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+            linear-gradient(45deg, rgba(0,0,0,0.015) 25%, transparent 25%),
             linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
             linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.03) 75%),
             linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.03) 75%);
@@ -192,10 +196,7 @@ export default function Index() {
         }
 
         .hero-bg {
-          background-color: #f9f7f4;
-          background-image:
-            repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.04) 39px, rgba(0,0,0,0.04) 40px),
-            repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.04) 39px, rgba(0,0,0,0.04) 40px);
+          background-color: rgba(255,255,255,0.55);
         }
 
         @keyframes fade-up {
@@ -370,7 +371,7 @@ export default function Index() {
 
       {/* Countdown */}
 
-      <section id="countdown" className="py-24 px-6 text-center classic-bg" style={{ borderBottom: "1px solid #ddd" }}>
+      <section id="countdown" className="py-24 px-6 text-center" style={{ borderBottom: "1px solid #ddd", background: "rgba(255,255,255,0.8)" }}>
         <p className="section-label">До начала торжества</p>
         <h2
           className="italic mb-16"
@@ -410,7 +411,7 @@ export default function Index() {
       </section>
 
       {/* Details */}
-      <section className="py-24 px-6" style={{ background: "#f9f7f4", borderBottom: "1px solid #ddd" }}>
+      <section className="py-24 px-6" style={{ background: "rgba(255,255,255,0.8)", borderBottom: "1px solid #ddd" }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label text-[#000000]">Детали торжества</p>
@@ -439,7 +440,7 @@ export default function Index() {
       </section>
 
       {/* Program */}
-      <section id="program" className="py-24 px-6 classic-bg" style={{ borderBottom: "1px solid #ddd" }}>
+      <section id="program" className="py-24 px-6" style={{ borderBottom: "1px solid #ddd", background: "rgba(255,255,255,0.8)" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Программа дня</p>
@@ -466,7 +467,7 @@ export default function Index() {
       </section>
 
       {/* Details notes */}
-      <section className="py-24 px-6" style={{ background: "#f9f7f4", borderBottom: "1px solid #ddd" }}>
+      <section className="py-24 px-6" style={{ background: "rgba(255,255,255,0.8)", borderBottom: "1px solid #ddd" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Важная информация</p>
@@ -510,7 +511,7 @@ export default function Index() {
       </section>
 
       {/* RSVP */}
-      <section className="py-24 px-6 classic-bg" style={{ borderBottom: "1px solid #ddd" }}>
+      <section className="py-24 px-6" style={{ borderBottom: "1px solid #ddd", background: "rgba(255,255,255,0.8)" }}>
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label">Анкета гостя</p>
