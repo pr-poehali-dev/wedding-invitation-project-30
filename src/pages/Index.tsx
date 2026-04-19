@@ -70,7 +70,7 @@ function RSVPForm() {
         <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.5rem, 4vw, 2rem)", fontWeight: 300 }} className="italic mb-4">
           Спасибо, {form.name}!
         </div>
-        <p style={{ fontSize: 14, color: "#888" }}>Мы получили ваш ответ и с нетерпением ждём встречи.</p>
+        <p style={{ fontSize: 14, color: "#111" }}>Мы получили ваш ответ и с нетерпением ждём встречи.</p>
       </div>
     );
   }
@@ -91,7 +91,7 @@ function RSVPForm() {
   return (
     <form ref={formRef} onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div>
-        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Ваше имя *</label>
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#111", display: "block", marginBottom: 8 }}>Ваше имя *</label>
         <input
           required
           style={inputStyle}
@@ -104,7 +104,7 @@ function RSVPForm() {
       </div>
 
       <div>
-        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Присутствие *</label>
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#111", display: "block", marginBottom: 8 }}>Присутствие *</label>
         <div style={{ display: "flex", gap: 12 }}>
           {[{ val: "yes", label: "Приду" }, { val: "no", label: "Не смогу" }].map(opt => (
             <label key={opt.val} style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", flex: 1, border: `1px solid ${form.attending === opt.val ? "#111" : "#ddd"}`, padding: "12px 16px", fontSize: 14, transition: "border-color 0.2s" }}>
@@ -117,7 +117,7 @@ function RSVPForm() {
 
       {form.attending === "yes" && (
         <div>
-          <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Количество гостей</label>
+          <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#111", display: "block", marginBottom: 8 }}>Количество гостей</label>
           <select
             style={{ ...inputStyle, cursor: "pointer" }}
             value={form.guests}
@@ -131,7 +131,7 @@ function RSVPForm() {
       )}
 
       <div>
-        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#888", display: "block", marginBottom: 8 }}>Пожелания молодожёнам</label>
+        <label style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#111", display: "block", marginBottom: 8 }}>Пожелания молодожёнам</label>
         <textarea
           rows={4}
           style={{ ...inputStyle, resize: "vertical" }}
@@ -248,14 +248,14 @@ export default function Index() {
           font-size: 10px;
           letter-spacing: 0.25em;
           text-transform: uppercase;
-          color: #888;
+          color: #111;
           margin-top: 6px;
         }
         .countdown-sep {
           font-family: 'Cormorant Garamond', serif;
           font-size: clamp(2rem, 6vw, 3.5rem);
           font-weight: 300;
-          color: #ccc;
+          color: #555;
           margin-bottom: 24px;
         }
 
@@ -299,7 +299,7 @@ export default function Index() {
           font-size: 10px;
           letter-spacing: 0.4em;
           text-transform: uppercase;
-          color: #aaa;
+          color: #111;
           margin-bottom: 16px;
         }
 
@@ -336,7 +336,7 @@ export default function Index() {
           </div>
 
           <div className="fade-up-3 mono-divider my-8">
-            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#aaa" }}>04 · 07 · 2026</span>
+            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#111" }}>04 · 07 · 2026</span>
           </div>
 
           <div className="fade-up-4" style={{ margin: "0 auto 32px", maxWidth: 320 }}>
@@ -356,12 +356,12 @@ export default function Index() {
 
           <p
             className="fade-up-5 italic"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.1rem, 3vw, 1.5rem)", color: "#444", fontWeight: 300 }}
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.1rem, 3vw, 1.5rem)", color: "#111", fontWeight: 300 }}
           >
             «Двое становятся одним<br />в день, когда начинается вечность»
           </p>
 
-          <div className="fade-up-6 mt-10 flex items-center justify-center gap-2" style={{ color: "#888", fontSize: 13 }}>
+          <div className="fade-up-6 mt-10 flex items-center justify-center gap-2" style={{ color: "#111", fontSize: 13 }}>
             <Icon name="MapPin" size={14} />
             <span style={{ letterSpacing: "0.05em" }}>Арт-кафе «Чехов», г. Новотроицк</span>
           </div>
@@ -433,7 +433,7 @@ export default function Index() {
                 </div>
                 <p className="section-label mb-2 text-[#000000] text-[0.63rem]">{item.label}</p>
                 <p className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem", fontWeight: 400 }}>{item.value}</p>
-                <p style={{ fontSize: 12, color: "#888", marginTop: 4 }}>{item.sub}</p>
+                <p style={{ fontSize: 12, color: "#111", marginTop: 4 }}>{item.sub}</p>
               </div>
             ))}
           </div>
@@ -454,12 +454,12 @@ export default function Index() {
             {PROGRAM.map((item, i) => (
               <div key={i} className="program-item">
                 <div style={{ width: 60, flexShrink: 0, paddingTop: 2 }}>
-                  <span style={{ fontSize: 13, color: "#aaa", fontVariantNumeric: "tabular-nums" }}>{item.time}</span>
+                  <span style={{ fontSize: 13, color: "#111", fontVariantNumeric: "tabular-nums" }}>{item.time}</span>
                 </div>
                 <div style={{ width: 1, background: "#e5e5e5", alignSelf: "stretch", flexShrink: 0 }} />
                 <div style={{ flex: 1 }}>
                   <p className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.2rem", fontWeight: 400, marginBottom: 4 }}>{item.title}</p>
-                  <p style={{ fontSize: 12, color: "#888" }}>{item.desc}</p>
+                  <p style={{ fontSize: 12, color: "#111" }}>{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -504,7 +504,7 @@ export default function Index() {
                 }}>
                   {i + 1}
                 </div>
-                <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#333" }}>{text}</p>
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#111" }}>{text}</p>
               </div>
             ))}
           </div>
@@ -519,7 +519,7 @@ export default function Index() {
             <h2 className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 300 }}>
               Анкета гостя
             </h2>
-            <p style={{ fontSize: 13, color: "#888", marginTop: 12 }}>Пожалуйста, заполните форму до 20 июня 2026</p>
+            <p style={{ fontSize: 13, color: "#111", marginTop: 12 }}>Пожалуйста, заполните форму до 20 июня 2026</p>
           </div>
 
           <RSVPForm />
