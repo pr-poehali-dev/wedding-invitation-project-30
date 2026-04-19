@@ -267,7 +267,7 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: "Calendar", label: "Дата", value: "4 июля 2026", sub: "Суббота" },
-              { icon: "Clock", label: "Время начала", value: "17:00", sub: "Сбор гостей с 16:30" },
+              { icon: "Clock", label: "Время начала банкета", value: "17:00", sub: "Сбор гостей с 16:30" },
               { icon: "MapPin", label: "Место", value: "Арт-кафе «Чехов»", sub: "г. Новотроицк" },
             ].map((item) => (
               <div key={item.label} className="detail-card">
