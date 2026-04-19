@@ -177,12 +177,12 @@ export default function Index() {
     <div style={{ fontFamily: "'Montserrat', sans-serif", color: "#111" }}>
       <style>{`
         body {
-          background-color: #fdf9f4;
-          background-image: url('https://cdn.poehali.dev/projects/ab1002c7-9042-4a9f-bffe-64f867186fb8/files/1345856c-838a-4f99-8f0b-7b412cdd5a06.jpg');
-          background-size: cover;
+          background-color: #fff;
+          background-image: url('https://cdn.poehali.dev/projects/ab1002c7-9042-4a9f-bffe-64f867186fb8/bucket/607c9fe0-fe06-4335-bc2a-96f91dce9ae0.png');
+          background-size: auto 100vh;
           background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
+          background-position: center top;
+          background-repeat: repeat-y;
         }
 
         .classic-bg {
@@ -197,7 +197,7 @@ export default function Index() {
         }
 
         .hero-bg {
-          background-color: rgba(253,249,244,0.72);
+          background-color: rgba(255,255,255,0.78);
         }
 
         @keyframes fade-up {
