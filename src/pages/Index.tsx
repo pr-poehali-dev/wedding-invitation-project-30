@@ -196,7 +196,7 @@ function MusicPlayer() {
         style={{
           position: "fixed",
           bottom: 28,
-          right: 28,
+          left: 28,
           zIndex: 100,
           width: 48,
           height: 48,
