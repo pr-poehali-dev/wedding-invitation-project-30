@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
-const WEDDING_DATE = new Date("2026-07-04T14:00:00");
+const WEDDING_DATE = new Date("2026-07-04T17:00:00");
 const COUPLE_PHOTO = "https://cdn.poehali.dev/files/286c8940-d027-4fd3-8434-8a7364a85ee7.jpg";
 
 const PROGRAM = [
@@ -267,7 +267,7 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: "Calendar", label: "Дата", value: "4 июля 2026", sub: "Суббота" },
-              { icon: "Clock", label: "Время начала", value: "14:00", sub: "Сбор гостей с 13:30" },
+              { icon: "Clock", label: "Время начала", value: "17:00", sub: "Сбор гостей с 16:30" },
               { icon: "MapPin", label: "Место", value: "Арт-кафе «Чехов»", sub: "г. Новотроицк" },
             ].map((item) => (
               <div key={item.label} className="detail-card">
