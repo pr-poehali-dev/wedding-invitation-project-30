@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
 const WEDDING_DATE = new Date("2016-07-10T14:00:00");
+const COUPLE_PHOTO = "https://cdn.poehali.dev/files/286c8940-d027-4fd3-8434-8a7364a85ee7.jpg";
 
 const PROGRAM = [
   { time: "14:00", title: "Сбор гостей", desc: "Встреча и приветственный фуршет" },
@@ -177,14 +178,29 @@ export default function Index() {
             <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#aaa" }}>10 · 07 · 2016</span>
           </div>
 
+          <div className="fade-up-4" style={{ margin: "0 auto 32px", maxWidth: 320 }}>
+            <img
+              src={COUPLE_PHOTO}
+              alt="Анна и Равиль"
+              style={{
+                width: "100%",
+                aspectRatio: "3/4",
+                objectFit: "cover",
+                objectPosition: "top",
+                border: "1px solid #e5e5e5",
+                display: "block",
+              }}
+            />
+          </div>
+
           <p
-            className="fade-up-4 italic"
+            className="fade-up-5 italic"
             style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.1rem, 3vw, 1.5rem)", color: "#444", fontWeight: 300 }}
           >
             «Двое становятся одним<br />в день, когда начинается вечность»
           </p>
 
-          <div className="fade-up-5 mt-10 flex items-center justify-center gap-2" style={{ color: "#888", fontSize: 13 }}>
+          <div className="fade-up-6 mt-10 flex items-center justify-center gap-2" style={{ color: "#888", fontSize: 13 }}>
             <Icon name="MapPin" size={14} />
             <span style={{ letterSpacing: "0.05em" }}>Усадьба «Берёзовая роща», Подмосковье</span>
           </div>
