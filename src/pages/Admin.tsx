@@ -19,11 +19,18 @@ export default function Admin() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(RSVP_LIST_URL)
-      .then(r => r.json())
-      .then(data => setItems(data.items || []))
-      .catch(() => setError("Не удалось загрузить данные"))
-      .finally(() => setLoading(false));
+    let attempts = 0;
+    const load = () => {
+      attempts++;
+      fetch(RSVP_LIST_URL)
+        .then(r => r.json())
+        .then(data => { setItems(data.items || []); setLoading(false); })
+        .catch(() => {
+          if (attempts < 3) setTimeout(load, 2000);
+          else { setError("Не удалось загрузить данные"); setLoading(false); }
+        });
+    };
+    load();
   }, []);
 
   const coming = items.filter(i => i.attending === "yes");
