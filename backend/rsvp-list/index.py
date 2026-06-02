@@ -5,7 +5,7 @@ import psycopg2.extras
 
 
 def handler(event: dict, context) -> dict:
-    """Возвращает список всех анкет гостей"""
+    """Возвращает список всех анкет гостей для страницы администратора"""
     if event.get('httpMethod') == 'OPTIONS':
         return {
             'statusCode': 200,
